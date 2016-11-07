@@ -1,0 +1,34 @@
+<title>New DK Expert Program</title>
+
+<%= form_for :Expert_Program, url: articles_path do |f| %>
+  <p>
+    <%= f.label :program %><br>
+    <%= f.text_field :program %>
+  </p>
+  
+<p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :category %><br>
+    <%= f.select :category, ['option1', 'option2']%>
+  </p>
+
+  <p>
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %>
+  </p>
+ 
+  <p>
+    <%= f.label :long_description %><br>
+    <%= f.text_area :long_description %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', articles_path %>

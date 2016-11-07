@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 20161107215521) do
     t.text     "category"
     t.text     "short_description"
     t.text     "long_description"
+    t.text     "title_image"
+    t.text     "list_image"
+    t.text     "video"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

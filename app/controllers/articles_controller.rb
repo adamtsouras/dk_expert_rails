@@ -19,6 +19,6 @@ end
  
 private
   def article_params
-    params.require(:Expert_Program).permit(:program, :title, :category, :short_description, :long_description)
+    params.require(:Expert_Program).permit(:program, :title, :category, :short_description, :long_description, :title_image, :list_image, :video)
   end
 end

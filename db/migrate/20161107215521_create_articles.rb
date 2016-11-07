@@ -6,6 +6,9 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.text :category
 t.text :short_description
 t.text :long_description
+t.text :title_image
+t.text :list_image
+t.text :video
       t.timestamps
     end
   end

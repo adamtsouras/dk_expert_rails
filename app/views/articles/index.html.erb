@@ -10,6 +10,10 @@
  <th>Category</th>
     <th>Short Desc.</th>
  <th>Long Desc.</th>
+ <th>Title Image</th>
+ <th>List Image</th>
+ <th>Video</th>
+
   </tr>
  
   <% @articles.each do |article| %>
@@ -22,6 +26,11 @@
       <td><%= article.short_description %></td>
 
       <td><%= article.long_description %></td>
+
+      <td><%= article.title_image %></td>
+      <td><%= article.list_image %></td>
+      <td><%= article.video %></td>
+
 
       <td><%= link_to 'Show', article_path(article) %></td>
     </tr>

@@ -1,0 +1,41 @@
+<%= form_for([@article, @article.drills.build]) do |f| %>
+  <p>
+    <%= f.label :drill_name %><br>
+    <%= f.text_field :drill_name %>
+  </p>
+    <p>
+    <%= f.label :drill_title %><br>
+    <%= f.text_field :drill_title %>
+  </p>
+
+   <p>
+    <%= f.label :drill_category %><br>
+    <%= f.select :drill_category, ['option1', 'option2']%>
+  </p>
+  <p>
+    <%= f.label :drill_shortdesc %><br>
+    <%= f.text_area :drill_shortdesc %>
+  </p>
+  <p>
+    <%= f.label :drill_longdesc %><br>
+    <%= f.text_area :drill_longdesc %>
+  </p>
+     <p>
+    <%= f.label :drill_titleimage %><br>
+    <%= f.text_field :drill_titleimage %>
+  </p>
+
+    <p>
+    <%= f.label :drill_listimage %><br>
+    <%= f.text_field :drill_listimage %>
+  </p>
+      <p>
+    <%= f.label :drill_keyfeatures %><br>
+    <%= f.text_field :drill_keyfeatures %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

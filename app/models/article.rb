@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-	has_many :drills
+	has_many :drills, dependent: :destroy
 	validates :program, presence: true,
 						length: { minimum: 5 }
 

@@ -1,3 +1,9 @@
+<style>
+body {
+    background-color: linen;
+}
+
+</style> 
 <p>
   <strong>Program:</strong>
   <%= @article.program %>
@@ -41,85 +47,15 @@
 
 
 <h2>Drills in thie Program</h2>
-<% @article.drills.each do |drill| %>
-  <p>
-    <strong>Drill Name:</strong>
-    <%= drill.drill_name %>
-  </p>
-   <p>
-    <strong>Drill Title:</strong>
-    <%= drill.drill_title %>
-  </p>
-   <p>
-    <strong>Drill Category:</strong>
-    <%= drill.drill_category %>
-  </p>
-   <p>
-    <strong>Drill Short Desc:</strong>
-    <%= drill.drill_shortdesc %>
-  </p>
-   <p>
-    <strong>Drill Long Desc:</strong>
-    <%= drill.drill_longdesc %>
-  </p>
-   <p>
-    <strong>Drill Title Image:</strong>
-    <%= drill.drill_titleimage %>
-  </p>
-   <p>
-    <strong>Drill List Image:</strong>
-    <%= drill.drill_listimage %>
-  </p>
-   <p>
-    <strong>Drill Key Features:</strong>
-    <%= drill.drill_keyfeatures %>
-  </p>
+  <%= render @article.drills %>
+
  
  
-<% end %>
+ 
 
 <h2>Add a Drill:</h2>
-<%= form_for([@article, @article.drills.build]) do |f| %>
-  <p>
-    <%= f.label :drill_name %><br>
-    <%= f.text_field :drill_name %>
-  </p>
-    <p>
-    <%= f.label :drill_title %><br>
-    <%= f.text_field :drill_title %>
-  </p>
+<%= render 'drills/form' %>
 
-   <p>
-    <%= f.label :drill_category %><br>
-    <%= f.select :drill_category, ['option1', 'option2']%>
-  </p>
-  <p>
-    <%= f.label :drill_shortdesc %><br>
-    <%= f.text_area :drill_shortdesc %>
-  </p>
-  <p>
-    <%= f.label :drill_longdesc %><br>
-    <%= f.text_area :drill_longdesc %>
-  </p>
-     <p>
-    <%= f.label :drill_titleimage %><br>
-    <%= f.text_field :drill_titleimage %>
-  </p>
-
-    <p>
-    <%= f.label :drill_listimage %><br>
-    <%= f.text_field :drill_listimage %>
-  </p>
-      <p>
-    <%= f.label :drill_keyfeatures %><br>
-    <%= f.text_field :drill_keyfeatures %>
-  </p>
-
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 

@@ -1,0 +1,38 @@
+<p>
+    <strong>Drill Name:</strong>
+    <%= drill.drill_name %>
+  </p>
+   <p>
+    <strong>Drill Title:</strong>
+    <%= drill.drill_title %>
+  </p>
+   <p>
+    <strong>Drill Category:</strong>
+    <%= drill.drill_category %>
+  </p>
+   <p>
+    <strong>Drill Short Desc:</strong>
+    <%= drill.drill_shortdesc %>
+  </p>
+   <p>
+    <strong>Drill Long Desc:</strong>
+    <%= drill.drill_longdesc %>
+  </p>
+   <p>
+    <strong>Drill Title Image:</strong>
+    <%= drill.drill_titleimage %>
+  </p>
+   <p>
+    <strong>Drill List Image:</strong>
+    <%= drill.drill_listimage %>
+  </p>
+   <p>
+    <strong>Drill Key Features:</strong>
+    <%= drill.drill_keyfeatures %>
+  </p>
+
+  <p>
+  <%= link_to 'Destroy Drill', [drill.article, drill],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

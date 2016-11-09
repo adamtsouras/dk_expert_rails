@@ -1,0 +1,60 @@
+<%= form_for @article do |f| %>
+ 
+<% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this program from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :program %><br>
+    <%= f.text_field :program %>
+  </p>
+    
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+   
+  <p>
+    <%= f.label :category %><br>
+    <%= f.select :category, ['option1', 'option2']%>
+  </p>
+
+  <p>
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %>
+  </p>
+   
+  <p>
+    <%= f.label :long_description %><br>
+    <%= f.text_area :long_description %>
+  </p>
+
+  <p>
+    <%= f.label :title_image %><br>
+    <%= f.text_field :title_image %>
+  </p>
+
+  <p>
+    <%= f.label :list_image %><br>
+    <%= f.text_field :list_image %>
+  </p>
+
+  <p>
+    <%= f.label :video %><br>
+    <%= f.text_field :video %>
+  </p>
+   
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

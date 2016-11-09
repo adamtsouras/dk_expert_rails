@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drill_name: MyString
+  drill_title: MyString
+  drill_category: MyString
+  drill_shortdesc: MyText
+  drill_longdesc: MyText
+  drill_titleimage: MyString
+  drill_listimage: MyString
+  drill_keyfeatures: MyString
+  article: one
+
+two:
+  drill_name: MyString
+  drill_title: MyString
+  drill_category: MyString
+  drill_shortdesc: MyText
+  drill_longdesc: MyText
+  drill_titleimage: MyString
+  drill_listimage: MyString
+  drill_keyfeatures: MyString
+  article: two

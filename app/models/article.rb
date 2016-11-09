@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+	has_many :drills
 	validates :program, presence: true,
 						length: { minimum: 5 }
 

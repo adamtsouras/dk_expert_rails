@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107215521) do
+ActiveRecord::Schema.define(version: 20161109172809) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "program"
@@ -23,6 +23,21 @@ ActiveRecord::Schema.define(version: 20161107215521) do
     t.text     "video"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "drills", force: :cascade do |t|
+    t.string   "drill_name"
+    t.string   "drill_title"
+    t.string   "drill_category"
+    t.text     "drill_shortdesc"
+    t.text     "drill_longdesc"
+    t.string   "drill_titleimage"
+    t.string   "drill_listimage"
+    t.string   "drill_keyfeatures"
+    t.integer  "article_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["article_id"], name: "index_drills_on_article_id"
   end
 
 end

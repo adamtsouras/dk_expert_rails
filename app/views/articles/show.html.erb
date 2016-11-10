@@ -1,9 +1,61 @@
 <style>
 body {
-    background-color: linen;
+    background-color: black;
+}
+th,td{color:white;}
+div {
+
+    font-family: Tahoma, Geneva, sans-serif;
+}
+p,h2{color:white;}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.page-wrap:after {
+  height: 50px; 
 }
 
+
 </style> 
+
+<div class="page-wrap">
+<%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_back.png", :style => 'float:left;'), articles_path %>
+
+
+<div style = "padding-left:65px;padding-top:50px;"class = "content">
+
+  <p style = "font-size:12;text-transform: uppercase;"><%= @article.category %></p>
+  <p style = "color:#61af62; font-size:22;text-transform: uppercase;"><b><%= @article.title %></b></p>
+
+  <%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_iconedit.png", :style => 'float:right;width:28px;padding-right:50px;margin-top:-35px;'),edit_article_path(@article) %>
+
+
+
+  <center><hr style = "margin-left:0px; margin-right:50px; margin-top:15px;"/></center>
+
+  <p style = "padding-right:50px;padding-top:25px;font-size:14;line-height: 20px;"><%= @article.long_description %></p>
+
+  <center><hr style = "margin-left:0px; margin-right:50px; margin-top:25px;"/></center>
+
+  <p style = "color:#61af62; font-size:14;text-transform: uppercase;padding-top:15px;padding-bottom:25px;"><b>The Program</b></p>
+
+</div>
+  <%= render @article.drills %>
+
+
+
+<!--
 <p>
   <strong>Program:</strong>
   <%= @article.program %>
@@ -44,19 +96,56 @@ body {
   <%= @article.video %>
 </p>
 
+-->
 
-
-<h2>Drills in thie Program</h2>
-  <%= render @article.drills %>
-
- 
  
  
 
 <h2>Add a Drill:</h2>
-<%= render 'drills/form' %>
+<%= form_for([@article, @article.drills.build]) do |f| %>
+  <p>
+    <%= f.label :drill_name %><br>
+    <%= f.text_field :drill_name %>
+  </p>
+    <p>
+    <%= f.label :drill_title %><br>
+    <%= f.text_field :drill_title %>
+  </p>
+
+   <p>
+    <%= f.label :drill_category %><br>
+    <%= f.select :drill_category, ['option1', 'option2']%>
+  </p>
+  <p>
+    <%= f.label :drill_shortdesc %><br>
+    <%= f.text_area :drill_shortdesc %>
+  </p>
+  <p>
+    <%= f.label :drill_longdesc %><br>
+    <%= f.text_area :drill_longdesc %>
+  </p>
+     <p>
+    <%= f.label :drill_titleimage %><br>
+    <%= f.text_field :drill_titleimage %>
+  </p>
+
+    <p>
+    <%= f.label :drill_listimage %><br>
+    <%= f.text_field :drill_listimage %>
+  </p>
+      <p>
+    <%= f.label :drill_keyfeatures %><br>
+    <%= f.text_field :drill_keyfeatures %>
+  </p>
 
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
-<%= link_to 'Back', articles_path %>
+
+
+-->
+
+</div>

@@ -8,8 +8,35 @@ body {
     background-color: black;
 }
 th,td{color:white;}
+div {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 50px; 
+}
+.site-footer {
+  background: #61af62;
+}
 
 </style> 
+
+<div class="page-wrap">
+  
 
 <center><img src = "http://diamondkinetics.info/assets/dke_dash_trainingtitle.png" style = "padding-top:10%; width:300px; "/></center>
 
@@ -78,7 +105,14 @@ th,td{color:white;}
     </div>
   </center>
     <% end %>
+
+
+</div>
+
+<footer class="site-footer">
+<%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_addprogram.png", :style => 'float:right;padding-top:8px;padding-right:20px;'),new_article_path %>
+</footer>
+
   
-  <%= link_to 'New program', new_article_path %>
 
 

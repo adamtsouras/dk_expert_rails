@@ -1,5 +1,20 @@
+
+<div id = "program_row" style = "margin-top:5px;padding-left:0px;background-color: #222222; height:63px; width: 100%; margin-bottom:6px;">
+
+  <img style = "padding-left:65px;padding-right:15px;padding-top:8px;float:left;"src = "http://diamondkinetics.info/assets/dke_dash_drillicon.png"/>
+    
+  <p style = "padding-top:15px;font-size:12;"><%= drill.drill_title %></p>
+  <p style = "color:#8b8b8b; padding-top:4px;font-size:12; text-transform: uppercase;"><b><%= drill.drill_category %></b></p>
+
+  <%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_icondelete.png", :style => 'margin-top:-30px;margin-right:60px;float:right;width:24px;'), [drill.article, drill],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+
+</div>
+
+<!--
 <p>
-    <strong>Drill Name:</strong>
+    <strong>Drill Name2:</strong>
     <%= drill.drill_name %>
   </p>
    <p>
@@ -32,7 +47,8 @@
   </p>
 
   <p>
-  <%= link_to 'Destroy Drill', [drill.article, drill],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+
+
+  
 </p>
+-->

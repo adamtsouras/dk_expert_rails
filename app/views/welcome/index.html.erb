@@ -1,3 +1,15 @@
-<% @title="Home" %>
-<h1>Welcome to the DK Expert Dashboard</h1>
-<%= link_to 'My Programs', controller: 'articles' %>
+<% @title="DK Expert Dashboard" %>
+<style>
+body {
+    background-color: black;
+}
+
+</style> 
+
+<title>DK Expert Dashboard</title>
+
+<div id = "contain">
+	<center><img style = "padding-top:20%;width:300px;" src = "http://diamondkinetics.info/assets/dke_dash_splash.png"/></center>
+</div>
+
+<center><%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_login.png", :style => 'width:250px;'), controller: 'articles' %></center>

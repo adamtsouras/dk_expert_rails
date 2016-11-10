@@ -1,8 +1,22 @@
+
+
 <title>DK Expert Dashboard</title>
-<h1>Listing Programs</h1>
-<%= link_to 'New program', new_article_path %>
+
+
+<style>
+body {
+    background-color: black;
+}
+th,td{color:white;}
+
+</style> 
+
+<center><img src = "http://diamondkinetics.info/assets/dke_dash_trainingtitle.png" style = "padding-top:10%; width:300px; "/></center>
+
   <br/>
   <br/>
+  
+<!-- old table with all values 
   <table>
     <tr>
       <th>Program</th>
@@ -33,3 +47,38 @@
       </tr>
     <% end %>
   </table>
+
+  -->
+<% @articles.each do |article| %>
+  <center>
+    <div id = "program_row" style = "background-color: #222222; height:85px; width: 100%; margin-bottom:6px;">
+      
+
+      <%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_rowmarker.png", :style => 'padding-left:15px;float:left;padding-top:20px;width:44px;'),article_path(article) %>
+
+      
+      
+      <div style = "padding-left:80px;padding-top:15px;font-size:14;color: white;text-align: left;"><%= article.title %></div>
+      
+      <div style = "overflow: hidden; background-color:'';max-height:30px;max-width:190px;text-transform: uppercase; padding-left:20px;padding-top:5px;font-size:13;color: #8b8b8b;float:left;text-align: left;"><%= article.short_description %></div>
+
+      <%= link_to image_tag("http://diamondkinetics.info/assets/dke_dash_iconedit.png", :style => 'margin-top:-5px;padding-right:30px;float:right;width:28px;'),edit_article_path(article) %>
+
+
+
+
+          <img style = "margin-top:-5px;padding-right:20px;float:right;width:24px;" src = "http://diamondkinetics.info/assets/dke_dash_icondelete.png"/>
+      
+<div style = "opacity:0; float:right;margin-right:-25px;">
+      <%= button_to 'del', article_path(article),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+</div>
+    
+    </div>
+  </center>
+    <% end %>
+  
+  <%= link_to 'New program', new_article_path %>
+
+
